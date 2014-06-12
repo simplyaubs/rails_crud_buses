@@ -15,6 +15,21 @@ class BusesController < ApplicationController
     end
   end
 
+  def show
+    @bus = Bus.find(params[:id])
+  end
+
+  def edit
+    @bus = Bus.find(params[:id])
+  end
+
+  def update
+    @bus = Bus.find(params[:id])
+    @bus.update_attributes!(bus_params)
+
+    redirect_to buses_path
+  end
+
   private
   def bus_params
     params.require(:bus).permit(:route, :direction)

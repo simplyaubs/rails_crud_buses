@@ -15,7 +15,7 @@
 <% @buses.each do |bus| %>
 <ul>
   <li>
-    <%= bus.route %>, <%= bus.direction %>
+    <%= link_to "#{bus.route}", bus_path(bus) %>, <%= bus.direction %>
   </li>
 </ul>
 <% end %>
