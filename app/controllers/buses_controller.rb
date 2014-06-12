@@ -30,6 +30,12 @@ class BusesController < ApplicationController
     redirect_to buses_path
   end
 
+  def destroy
+    @bus = Bus.find(params[:id]).delete
+
+    redirect_to buses_path
+  end
+
   private
   def bus_params
     params.require(:bus).permit(:route, :direction)
